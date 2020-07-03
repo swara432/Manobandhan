@@ -1,0 +1,38 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+</head>
+<body>
+	<div class="row">
+			<div class="col-lg-12 col-sm-12 col-md-12" >
+				<nav class="nav navbar-default navbar-fixed-top" style="background-color:#AA3535;  width: 100%;">
+					<div class="container-fluid">
+						<ul class="nav navbar-nav navbar-left" style="font-family:'#44 Font';"><!----left--->
+								<li ><a href="profile.jsp" style="color: white;">Home</a></li>
+                            <li ><a href="matches.jsp" style="color: white;">Matches</a></li>
+                            <li ><a href="inbox.jsp" style="color: white;">Inbox</a></li>
+                            <li ><a href="search.jsp" style="color: white;">Search</a></li>
+                            <li ><a href="upgrade.jsp" style="color: white;">Premium</a></li>
+                              
+                        </ul>
+						<ul class="nav navbar-nav" style="font-family:'#44 Font'; margin-left: 20%;">  <!----Center--->
+							<li ><a href="profile.jsp" style="color: white;"><img src="images/logo/logo.png" alt="Marital" height="25"/></a></li>
+                        </ul>                            
+		                 <ul class="nav navbar-nav navbar-right" style="font-family:'#44 Font'; margin-right: 10px; margin-top: 4px;">  <!----right--->                                                        							
+							<li><a href="" data-toggle="modal" data-target="#Login_model" style="color: white;"></span>My Profile</a></li>
+								<li><a href="UserLogoutServlet" data-toggle="modal" data-target="#Login_model" style="color: white;"></span>Log Out</a></li>
+                            <div class="profile-picture small-profile-picture">                                
+                               <!--  <img width="40px" alt="Anne Hathaway picture" src="images/icon/a1.jpg">   -->      
+                                 <img width="40px" alt="Anne Hathaway picture" src="data:image/jpeg;base64,${photo}">                           
+                            </div>                                   
+						</ul>
+					</div>
+				</nav>
+           </div> 		
+		</div>		
+        
+</body>
+</html>

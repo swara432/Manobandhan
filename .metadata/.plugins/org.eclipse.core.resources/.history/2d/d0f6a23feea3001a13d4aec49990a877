@@ -1,0 +1,83 @@
+package com.manobandhan.edit;
+
+
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.ResultSet;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.manobandhan.dao.ProfileDao;
+import com.manobandhan.profile.Profile_info;
+@WebServlet("/SaveServlet")
+public class SaveServlet extends HttpServlet {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		response.setContentType("text/html");
+		PrintWriter out=response.getWriter();
+		
+		String ManageBy=request.getParameter("ManageBy");
+		String FullName=request.getParameter("FullName");
+		String Age=request.getParameter("Age");
+		String MStatus=request.getParameter("MStatus");
+		String Qualification=request.getParameter("Qualification");
+		String Occupation=request.getParameter("Occupation");
+		String AnnualIncome=request.getParameter("AI");
+		String Height=request.getParameter("Height");
+		String Weight=request.getParameter("Weight");
+		String BloodGroup=request.getParameter("BloodGroup");
+		String Caste=request.getParameter("Caste");
+		String Complexion=request.getParameter("Complexion");
+		String LanguageKnown=request.getParameter("LanguageKnown");
+		String BodyType=request.getParameter("BodyType");
+		String MotherTongue=request.getParameter("MotherTounge");
+		String Drink=request.getParameter("Drink");
+		String Smoke=request.getParameter("Smoke");
+	
+		
+		Profile_info profile =new Profile_info();
+
+			
+			
+			
+			profile.setManageBy(ManageBy);
+			profile.setName(FullName);
+			profile.setAge(Age);
+			profile.setMarital_Status(MStatus);
+			profile.setQualification(Qualification);
+			profile.setOccupation(Occupation);
+			profile.setAnnual_Income(AnnualIncome);
+			profile.setHeight(Height);
+			profile.setWeight(Weight);
+			profile.setBlood_Group(BloodGroup);
+			profile.setCaste(Caste);
+			profile.setComplexion(Complexion);
+			profile.setLanguage(LanguageKnown);
+			profile.setBody_Type(BodyType);
+			profile.setMother_Tounge(MotherTongue);
+			profile.setDrink(Drink);
+			profile.setSmoke(Smoke);
+			//profile.setPhoto(result.getString(20));
+		
+		
+		//int status=ProfileDao.save(profile);
+		if(status>0){
+			out.print("<p>Record saved successfully!</p>");
+			request.getRequestDispatcher("index.html").include(request, response);
+		}else{
+			out.println("Sorry! unable to save record");
+		}
+		
+		out.close();
+	}
+
+}

@@ -1,0 +1,103 @@
+package com.manobandhan.dao;
+
+	import java.sql.Connection;
+	import java.sql.PreparedStatement;
+	import java.sql.ResultSet;
+	import java.sql.SQLException;
+
+import com.manobandhan.config.DbConnection;
+import com.manobandhan.profile.Profile_info;
+
+	public class ProfileDao {
+
+		public Profile_info getProfile(long infoId) throws SQLException, ClassNotFoundException {
+
+			DbConnection dbcon = DbConnection.getInstance();
+			Connection con = dbcon.getConnection();
+			PreparedStatement ps = con.prepareStatement("select * from personal_info where info_id=?");
+
+			ps.setLong(1, infoId);
+
+			ResultSet result = ps.executeQuery();
+
+			Profile_info profile =new Profile_info();
+
+			if (result.next()) {
+				
+				
+				profile.setInfoId(result.getInt(2)); 
+				profile.setManageBy(result.getString(3));
+				profile.setName(result.getString(4));
+				profile.setAge(result.getString(5));
+				profile.setMarital_Status(result.getString(6));
+				profile.setQualification(result.getString(7));
+				profile.setOccupation(result.getString(8));
+				profile.setAnnual_Income(result.getString(9));
+				profile.setHeight(result.getString(10));
+				profile.setWeight(result.getString(11));
+				profile.setBlood_Group(result.getString(12));
+				profile.setCaste(result.getString(13));
+				profile.setComplexion(result.getString(14));
+				profile.setLanguage(result.getString(15));
+				profile.setBody_Type(result.getString(16));
+				profile.setMother_Tounge(result.getString(17));
+				profile.setDrink(result.getString(18));
+				profile.setSmoke(result.getString(19));
+				//profile.setPhoto(result.getString(20));
+			}
+
+			con.close();
+
+			return profile;
+		}
+		public static int update(long infoId){
+			
+			int status=0;
+			try{
+				DbConnection dbcon = DbConnection.getInstance();
+				Connection con = dbcon.getConnection();
+			
+				PreparedStatement ps = con.prepareStatement("update user905 set ManageBy=?,Name=?,Age=?,Marital_Status=?,Qualification=?,Occupation=?,Annual_Income=?,"
+						+ "Height=?,"
+						+ "Blood_Group=?,Caste=?,Complexion=?,Language=?,Body_Type=?,Mother_Tongue=?,"
+						+ "Drink=?,Smoke=? where info_id=?");
+				ps.setLong(1, infoId);
+
+				ResultSet result = ps.executeQuery();
+
+				Profile_info profile =new Profile_info();;
+				
+				profile.setInfoId(result.getInt(2)); 
+				profile.setManageBy(result.getString(3));
+				profile.setName(result.getString(4));
+				profile.setAge(result.getString(5));
+				profile.setMarital_Status(result.getString(6));
+				profile.setQualification(result.getString(7));
+				profile.setOccupation(result.getString(8));
+				profile.setAnnual_Income(result.getString(9));
+				profile.setHeight(result.getString(10));
+				profile.setWeight(result.getString(11));
+				profile.setBlood_Group(result.getString(12));
+				profile.setCaste(result.getString(13));
+				profile.setComplexion(result.getString(14));
+				profile.setLanguage(result.getString(15));
+				profile.setBody_Type(result.getString(16));
+				profile.setMother_Tounge(result.getString(17));
+				profile.setDrink(result.getString(18));
+				profile.setSmoke(result.getString(19));
+				//profile.setPhoto(result.getString(20));
+				
+				status=ps.executeUpdate();
+				
+				con.close();
+			}catch(Exception ex){ex.printStackTrace();}
+			
+			return status;
+		}
+		public static int save(Profile_info profile) {
+			
+			
+			// TODO Auto-generated method stub
+			return 0;
+		}
+	}
