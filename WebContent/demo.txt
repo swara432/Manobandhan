@@ -1,0 +1,40 @@
+<div class="card">           
+                      <div class="card-header" style="margin-top: 5px;">           
+                         <p style="font-family: Agnes; font-size: 2em;"><b>Basic Detail</b></p>                  
+                    </div>
+                      <div class="card-content" style="margin-top: 5px;">           
+                    <table class="table" >
+    		        	<tbody>
+    		        		<tr >
+    							<td><b>Age / Height :</b></td>
+    							<td>28, 5ft 5in / 163cm</td>
+    						</tr>
+    					    <tr >
+    							<td ><b>Last Login :</b></td>
+    							<td >4 hours ago</td>
+    						</tr>
+    					    <tr >
+    							<td ><b>Religion :</b></td>
+    							<td >Sikh</td>
+    						</tr>
+    					    <tr >
+    							<td ><b>Marital Status :</b></td>
+    							<td >Single</td>
+    						</tr>
+    					    <tr >
+    							<td ><b>Location :</b></td>
+    							<td >India</td>
+    						</tr>
+    					    <tr >
+    							<td ><b>Profile Created by :</b></td>
+    							<td ><span>Self</span></td>
+    						</tr>
+    					    <tr >
+    							<td ><b>Education :</b></td>
+    							<td ><span>Engineering</span></td>
+    						</tr>
+    				    </tbody>
+                        <div class="clearfix"> </div>
+				</table>                                         
+                    </div>                                                              
+              </div>
